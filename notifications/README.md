@@ -11,6 +11,7 @@ cat > ~/.aws_config << END
 [default]
 aws_access_key_id=
 aws_secret_access_key=
+END
 ```
 The script ```send2twitter.py``` can be used to send check_mk notifications via Twitter. Python [twitter](https://github.com/sixohsix/twitter) package is required for the script to work:
 
@@ -18,7 +19,7 @@ The script ```send2twitter.py``` can be used to send check_mk notifications via 
 sudo pip install simplejson requests requests_oauthlib twitter
 ```
 
-The tikens and keys should be kept in ```TWITTER_CONFIG_FILE``` file:
+Tokens and keys should be kept in ```TWITTER_CONFIG_FILE``` file:
 
 ```bash
 cat > ~/.twitter_config << END
@@ -27,12 +28,14 @@ oauth_token=
 oauth_secret=
 consumer_key=
 consumer_secret=
+END
 ```
 
-Both scripts take their config file path from environment variables:
+Both scripts take their config file paths from environment variables:
 
 ```bash
 cat > ~/etc/environment << END
 AWS_CONFIG_FILE="$OMD_ROOT/.aws_config"
 TWITTER_CONFIG_FILE="$OMD_ROOT/.twitter_config"
+END
 ```

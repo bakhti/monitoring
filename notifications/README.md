@@ -1,4 +1,9 @@
-The script ```send2ses.py``` can be used to send check_mk notifications via AWS SES (Simple Email Service), so [Boto](https://github.com/boto/boto) package is required:
+[Check_MK Flexible Notifications](http://mathias-kettner.com/checkmk_flexible_notifications.html)
+-------------------------------------------------------------------------------------------------
+
+### Alerting to e-mail
+
+The script ```send2ses.py``` can be used to send [check_mk](http://mathias-kettner.com/check_mk.html) notifications via AWS SES (Simple Email Service), so [Boto](https://github.com/boto/boto) package is required:
 
 ```bash
 sudo pip install boto
@@ -13,6 +18,9 @@ aws_access_key_id=
 aws_secret_access_key=
 END
 ```
+
+### Alerting to twitter
+
 The script ```send2twitter.py``` can be used to send check_mk notifications via Twitter. Python [twitter](https://github.com/sixohsix/twitter) package is required for the script to work:
 
 ```bash

@@ -3,9 +3,26 @@ from os import environ, getenv
 from ConfigParser import ConfigParser
 from twitter import Twitter, OAuth
 
-notification_host_pager_body = u"""Host: {!s} ({!s}) IP:{!s}, State: {!s} -> {!s} ({!s})""".format(environ['NOTIFY_HOSTNAME'].replace('.', '_'), environ['NOTIFY_HOSTALIAS'].replace('.', '_'), environ['NOTIFY_HOSTADDRESS'], environ['NOTIFY_LASTHOSTSTATE'], environ['NOTIFY_HOSTSTATE'], environ['NOTIFY_NOTIFICATIONTYPE'])
+notification_host_pager_body = u"""
+Host: {!s} ({!s}) IP:{!s}, State: {!s} -> {!s} ({!s})
+""".format(
+    environ['NOTIFY_HOSTNAME'].replace('.', '_'),
+    environ['NOTIFY_HOSTALIAS'].replace('.', '_'),
+    environ['NOTIFY_HOSTADDRESS'],
+    environ['NOTIFY_LASTHOSTSTATE'],
+    environ['NOTIFY_HOSTSTATE'],
+    environ['NOTIFY_NOTIFICATIONTYPE'])
 
-notification_service_pager_body = u"""Host: {!s} ({!s}), IP: {!s}, Service: {!s} State: {!s} -> {!s} ({!s})""".format(environ['NOTIFY_HOSTNAME'].replace('.', '_'), environ['NOTIFY_HOSTALIAS'].replace('.', '_'), environ['NOTIFY_HOSTADDRESS'], environ['NOTIFY_SERVICEDESC'], environ['NOTIFY_LASTSERVICESTATE'], environ['NOTIFY_SERVICESTATE'], environ['NOTIFY_NOTIFICATIONTYPE'])
+notification_service_pager_body = u"""
+Host: {!s} ({!s}), IP: {!s}, Service: {!s} State: {!s} -> {!s} ({!s})
+""".format(
+    environ['NOTIFY_HOSTNAME'].replace('.', '_'),
+    environ['NOTIFY_HOSTALIAS'].replace('.', '_'),
+    environ['NOTIFY_HOSTADDRESS'],
+    environ['NOTIFY_SERVICEDESC'],
+    environ['NOTIFY_LASTSERVICESTATE'],
+    environ['NOTIFY_SERVICESTATE'],
+    environ['NOTIFY_NOTIFICATIONTYPE'])
 
 config = ConfigParser()
 config.read(environ['TWITTER_CONFIG_FILE'])
